@@ -37,13 +37,11 @@ class HomeCubit extends Cubit<HomeState> {
     final result = await homeRepository.searchEmployess(searchText: searchText);
 
     if (searchText.isEmpty) {
-      print('empty text');
       emit(HomeState.success(
         data: _employees,
       ));
     } else {
       if (result != null && result.isNotEmpty) {
-        print('not empty');
         emit(HomeState.searched(
           data: result,
         ));
