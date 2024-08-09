@@ -8,14 +8,18 @@ part of 'response.dart';
 
 StatusResponse _$StatusResponseFromJson(Map<String, dynamic> json) =>
     StatusResponse(
-      success: json['success'] as bool,
+      statusCode: json['statusCode'] as int,
+      error: json['error'],
       message: json['message'] as String,
-      data: json['data'] as Map<String, dynamic>,
+      data: (json['data'] as List<dynamic>)
+          .map((e) => e as Map<String, dynamic>)
+          .toList(),
     );
 
 Map<String, dynamic> _$StatusResponseToJson(StatusResponse instance) =>
     <String, dynamic>{
-      'success': instance.success,
+      'statusCode': instance.statusCode,
+      'error': instance.error,
       'message': instance.message,
       'data': instance.data,
     };

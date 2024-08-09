@@ -17,6 +17,10 @@ class Api {
         "errorCode": "DUPLICATE_ENTRY",
         "message": "The table entry 'designation' already exists"
       },
+      {
+        "errorCode": "UNABLE_TO_READ",
+        "message": "The table entry does not exist"
+      },
     ],
     "data": {}
   };

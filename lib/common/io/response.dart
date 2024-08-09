@@ -3,12 +3,16 @@ part 'response.g.dart';
 
 @JsonSerializable()
 class StatusResponse {
-  final bool success;
+  final int statusCode;
+  final dynamic error;
   final String message;
-  final Map<String, dynamic> data;
+  final List<Map<String, dynamic>> data;
 
   const StatusResponse(
-      {required this.success, required this.message, required this.data});
+      {required this.statusCode,
+      required this.error,
+      required this.message,
+      required this.data});
 
   factory StatusResponse.fromJson(Map<String, dynamic> json) =>
       _$StatusResponseFromJson(json);
