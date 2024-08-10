@@ -14,8 +14,6 @@ class MobileAssessmentApp extends StatefulWidget {
 }
 
 class _MobileAssessmentAppState extends State<MobileAssessmentApp> {
-
-
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(

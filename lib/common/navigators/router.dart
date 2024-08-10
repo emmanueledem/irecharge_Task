@@ -15,9 +15,12 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       );
 
     case RouteName.detailsScreen:
+      final args = settings.arguments as DetailsScreenParams;
       return _getPageRoute(
         routeName: settings.name!,
-        viewToShow: const DetailsScreen(),
+        viewToShow: DetailsScreen(
+          params: args,
+        ),
       );
 
     case RouteName.welcomeScreen:

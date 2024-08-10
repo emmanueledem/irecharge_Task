@@ -34,6 +34,17 @@ class EmployessContainer extends StatelessWidget {
         margin: const EdgeInsets.only(bottom: 16),
         width: double.infinity,
         decoration: BoxDecoration(
+          boxShadow: const [
+            BoxShadow(
+              color: AppColors.grey14,
+
+              blurRadius: 4,
+              offset: Offset(
+                0,
+                4,
+              ), // changes position of shadow
+            ),
+          ],
           color: AppColors.white,
           borderRadius: BorderRadius.circular(10.06),
         ),

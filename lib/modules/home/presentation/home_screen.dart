@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:mobile_assessment/common/colors.dart';
+import 'package:mobile_assessment/common/navigators/navigators.dart';
 import 'package:mobile_assessment/common/text_styles.dart';
+import 'package:mobile_assessment/modules/details/presentation/details_screen.dart';
 import 'package:mobile_assessment/modules/home/cubit/home_cubit.dart';
 import 'package:mobile_assessment/modules/home/cubit/home_cubit_state.dart';
 import 'package:mobile_assessment/modules/home/repository/home_repository.dart';
@@ -98,8 +100,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: state.maybeWhen(
                     orElse: SizedBox.new,
                     error: (message) {
-                      return Text(
+                      return TextRegular(
                         message.toString(),
+                        textAlign: TextAlign.center,
+                        fontWeight: FontWeight.w500,
                       );
                     },
                     loading: () {
@@ -120,7 +124,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               productivityScore: item.productivityScore,
                               currentSalary: item.currentSalary,
                               employmentStatus: item.employmentStatus,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, RouteName.detailsScreen,
+                                    arguments: DetailsScreenParams(
+                                        employeeName: '${item.firstName} '
+                                            '${item.lastName}',
+                                        designation: item.designation,
+                                        level: item.level,
+                                        productivityScore:
+                                            item.productivityScore.toInt(),
+                                        salary: item.currentSalary,
+                                        employmentStatus:
+                                            item.employmentStatus));
+                              },
                             );
                           },
                         ),
@@ -141,7 +158,20 @@ class _HomeScreenState extends State<HomeScreen> {
                               productivityScore: item.productivityScore,
                               currentSalary: item.currentSalary,
                               employmentStatus: item.employmentStatus,
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.pushNamed(
+                                    context, RouteName.detailsScreen,
+                                    arguments: DetailsScreenParams(
+                                        employeeName: '${item.firstName} '
+                                            '${item.lastName}',
+                                        designation: item.designation,
+                                        level: item.level,
+                                        productivityScore:
+                                            item.productivityScore.toInt(),
+                                        salary: item.currentSalary,
+                                        employmentStatus:
+                                            item.employmentStatus));
+                              },
                             );
                           },
                         ),
