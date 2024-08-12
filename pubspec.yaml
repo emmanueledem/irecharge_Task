@@ -19,6 +19,7 @@ dependencies:
   gap: ^3.0.1
   json_annotation: ^4.8.1
   percent_indicator: ^4.2.3
+  visibility_detector: ^0.4.0+2
 
 dev_dependencies:
   flutter_test:
@@ -27,6 +28,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   json_serializable:
   build_runner: ^2.4.9
+  mocktail: ^1.0.4
+  recase: ^4.1.0
+  golden_toolkit: ^0.15.0
 
 #flutter_icons:
 #  ios: true

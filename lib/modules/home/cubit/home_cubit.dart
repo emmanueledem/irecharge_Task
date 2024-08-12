@@ -6,7 +6,9 @@ import 'package:mobile_assessment/modules/home/cubit/home_cubit_state.dart';
 import 'package:mobile_assessment/modules/home/repository/home_repository.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit() : super(const HomeState.initial());
+  HomeCubit({this.initialState}) : super( initialState ?? const HomeState.initial() );
+
+  final HomeState? initialState;
 
   Map<String, dynamic> errorResponse = Api.errorRexponse;
 

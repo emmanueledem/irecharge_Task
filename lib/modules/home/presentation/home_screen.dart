@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:mobile_assessment/common/colors.dart';
 import 'package:mobile_assessment/common/navigators/navigators.dart';
+import 'package:mobile_assessment/common/test_util.dart';
 import 'package:mobile_assessment/common/text_styles.dart';
 import 'package:mobile_assessment/modules/details/presentation/details_screen.dart';
 import 'package:mobile_assessment/modules/home/cubit/home_cubit.dart';
@@ -26,12 +27,15 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isSearch = false;
 
   _fetchData() async {
-    await context.read<HomeCubit>().getEmployees(
-          context,
-        );
-    setState(() {
-      showInput = true;
-    });
+    if (TestUtil.isTest) {
+    } else {
+      await context.read<HomeCubit>().getEmployees(
+            context,
+          );
+      setState(() {
+        showInput = true;
+      });
+    }
   }
 
   @override
@@ -64,6 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           TextBold(
                             'Hi Dexter',
+                            key: const Key('nameWidget'),
                             fontWeight: FontWeight.w500,
                           ),
                           const Gap(1),
