@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart' as golden_toolkit;
 import 'package:mobile_assessment/common/io/employes_model.dart';
-import 'package:mobile_assessment/common/io/safe_image_configuration.dart';
+import 'package:mobile_assessment/common/safe_image_configuration.dart';
 import 'package:mobile_assessment/modules/home/cubit/home_cubit.dart';
 import 'package:mobile_assessment/modules/home/cubit/home_cubit_state.dart';
 import 'package:mocktail/mocktail.dart';
